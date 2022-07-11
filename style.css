@@ -1,0 +1,163 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: 'Kaushan Script', cursive;
+  background-color: #050418;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.point {
+  list-style-type: none;
+  position: absolute;
+  left: 10%;
+  bottom: 0;
+  width: 25px;
+  height: 25px;
+  background: radial-gradient(deepskyblue, transparent, transparent);
+  border-radius: 50%;
+  animation: point-animation 15s linear infinite;
+  opacity: 0;
+}
+.point-1 {
+  left: 2%;
+  animation-delay: 2s;
+  background: radial-gradient(#d400d4, transparent, transparent);
+}
+.point-2 {
+  left: 90%;
+  animation-delay: 8s;
+}
+.point-3 {
+  left: 27%;
+  animation-delay: 5s;
+  background: radial-gradient(#d400d4, transparent, transparent);
+}
+.point-4 {
+  left: 60%;
+  animation-delay: 9s;
+}
+.point-5 {
+  left: 82%;
+  animation-delay: 14s;
+  background: radial-gradient(#d400d4, transparent, transparent);
+}
+.point-6 {
+  left: 14%;
+  animation-delay: 10s;
+}
+.point-7 {
+  left: 50%;
+  animation-delay: 3s;
+  background: radial-gradient(#d400d4, transparent, transparent);
+}
+.point-8 {
+  left: 46%;
+  animation-delay: 1s;
+}
+.point-9 {
+  left: 100%;
+  animation-delay: 15s;
+  background: radial-gradient(#d400d4, transparent, transparent);
+}
+.point-10 {
+  left: 63%;
+  animation-delay: 10s;
+}
+
+@keyframes point-animation {
+  0% {
+    transform: scale(0);
+    bottom: 0%;
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(10);
+    opacity: 0;
+    bottom: 100%;
+  }
+}
+
+.card {
+  position: relative;
+  max-width: 700px;
+  width: 100%;
+  margin: 2rem;
+  padding: 2rem;
+  background-color: black;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  z-index: 1;
+  border-radius: 10px;
+}
+.card::before {
+  content: '';
+  position: absolute;
+  width: 1000px;
+  height: 1000px;
+  background-image: conic-gradient(
+    transparent,
+    transparent,
+    transparent,
+    deepskyblue
+  );
+  animation: spinner 4s linear infinite;
+  z-index: -1;
+}
+.card::after {
+  content: '';
+  position: absolute;
+  width: 1000px;
+  height: 1000px;
+  background-image: conic-gradient(
+    transparent,
+    transparent,
+    transparent,
+    #d400d4
+  );
+  animation: spinner 4s linear infinite;
+  animation-delay: -2s;
+}
+
+.card__animation {
+  position: absolute;
+  background-color: #050418;
+  inset: 4px;
+  z-index: 1;
+  border-radius: 10px;
+}
+.card__content {
+  z-index: 2;
+}
+.card__quote {
+  font-size: 1rem;
+  padding-bottom: 1rem;
+}
+@media (min-width: 600px) {
+  .card__quote {
+    font-size: 2rem;
+  }
+}
+
+@keyframes spinner {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
