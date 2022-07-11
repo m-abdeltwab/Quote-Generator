@@ -9,7 +9,7 @@
 body {
   font-family: 'Kaushan Script', cursive;
   background-color: #050418;
-  min-height: 100vh;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
